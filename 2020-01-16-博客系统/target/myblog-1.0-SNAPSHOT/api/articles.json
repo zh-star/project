@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "2020年，你好",
+    "author": {
+      "id": 1,
+      "nickname": "陈沛鑫",
+      "username": "peixinchen"
+    },
+    "content": "今天是个好日子",
+    "published_at": "2020-01-16 17:00:00"
+  },
+  {
+    "id": 2,
+    "title": "2020年，你好",
+    "author": {
+      "id": 1,
+      "nickname": "陈沛鑫",
+      "username": "peixinchen"
+    },
+    "content": "今天是个好日子",
+    "published_at": "2020-01-16 17:00:00"
+  }
+]

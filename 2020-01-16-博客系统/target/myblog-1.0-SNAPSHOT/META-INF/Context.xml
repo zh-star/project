@@ -1,0 +1,6 @@
+<Context>
+    <Manager className="org.apache.catalina.session.PersistentManager">
+        <Store className="org.apache.catalina.session.FileStore" directory="E:\比特科技\课程\JavaWeb\2019年-大四火箭班\2020-01-16-博客系统\sessions">
+        </Store>
+    </Manager>
+</Context>
