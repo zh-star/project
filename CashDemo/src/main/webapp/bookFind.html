@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西安工业大学实验室管理系统</title>
+    
+
+</head>
+<body>
+<div class="dvcontent">
+ 
+    <div>
+        <!--tab start-->
+        <div class="tabs" style="margin: 30px;">
+            <div class="hd">
+                <ul>                  
+					<li class="" style="box-sizing: initial;-webkit-box-sizing: initial; font-family: 宋体; font-size: 150%; font-weight: 700; color: black">图书查询</li>					
+                </ul>
+            </div>
+			
+			
+			<div class="bd" style="padding-top: 30px; padding-right:30px ">
+				<label > &nbsp &nbsp 图书编号</label>
+				<a href="StuSearch.html"><!--学生出入信息下面的标签点击之后进入下一个html-->
+                        <input type="text" id="bookId" required placeholder="编号" name="stno">
+                        <label for="name"> 搜索</label>
+						
+					
+                </a>
+				<a style="font-family: 宋体; font-size: 120%; font-weight: 700; color: black"><label for="name" class="am-u-sm-3 am-form-label">
+					&nbsp &nbsp 出 版 社 &nbsp  </label>
+				</a>  <input type="text" id="bookName" required
+					   placeholder="出版社" name="bookName">
+					   <br/><br/><br/>
+				<div class="bd">
+                        <ul style="display: block;padding: 20px;">
+                            <li>
+                                <!--分页显示角色信息 start-->
+                                <div id="dv1">
+                                    <!-- 规定元素的类名（classname）  规定元素的唯一 id-->
+                                    <table class="table" id="tbRecord">
+                                        <thead><!--<thead> 标签定义表格的表头。该标签用于组合 HTML 表格的表头内容。-->
+                                        <tr><!--tr 元素包含一个或多个 th 或 td 元素。-->
+                                            <th>序号</th>
+                                            <th>图书编号</th>
+                                            <th>图书名称</th>
+                                            <th>图书类型</th>
+                                            <th>图书库存数量</th>
+                                            <th>图书借阅</th>
+                                            <th>图书归还</th>
+                                            <th>借阅学生学号</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2673</th>
+                                            <th>Java</th>
+                                            <th>编程</th>
+                                            <th>5</th>
+                                            <th>借阅</th>
+                                            <th>归还</th>
+
+                                        </tr>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2673</th>
+                                            <th>Java</th>
+                                            <th>编程</th>
+                                            <th>5</th>
+                                            <th>借阅</th>
+                                            <th>归还</th>
+                                        </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!--分页显示角色信息 end-->
+                            </li>
+                        </ul>
+                    </div>
+				
+			</div>
+			
+                <script src="js/jquery-1.7.2.min.js" ></script>
+                <!--<script src="js/plugs/Jqueryplugs.js" type="text/javascript"></script>-->
+                <script src="js/plugs/jquery.SuperSlide.source.js"></script>
+                <script>
+                    $(function () {
+                        $(".tabs").slide({trigger: "click"});
+                    });
+                </script>
+           
+        </div>
+    </div>
+</div>
+</body>
