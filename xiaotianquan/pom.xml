@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhxx</groupId>
+    <artifactId>xiaotianquan</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <dependencies><!-- 依赖包-->
+        <dependency>
+            <groupId>com.belerweb</groupId> <!--根据包名在本地仓库去找，若找不到，去网上找 -->
+            <artifactId>pinyin4j</artifactId><!-- 产品名称-->
+            <version>2.5.1</version><!--版本号，在其版本号文件夹中找jar包 -->
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.28.0</version>
+        </dependency>
+    </dependencies>
+
+
+    <build><!-- 配置插件-->
+    <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId><!--编译插件-->
+        <version>3.8.1</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <encoding>UTF-8</encoding>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId><!--打jar包的,默认是有的-->
+        <version>3.1.0</version>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>Main</mainClass> <!-- 指定入口类 -->
+                    <addClasspath>true</addClasspath> <!-- 在jar的MF文件中生成classpath属性 -->
+                    <classpathPrefix>lib/</classpathPrefix> <!--classpath前缀,即依赖jar包的路径 -->
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId><!---->
+    <version>3.1.1</version>
+    <executions>
+    <execution>
+    <id>copy</id>
+    <phase>package</phase>
+        <goals>
+            <goal>copy-dependencies</goal>
+        </goals>
+        <configuration>
+            <!-- 指定依赖包的输出路径，需与上方的classpathPrefix保持一
+            致 -->
+            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+        </configuration>
+    </execution>
+    </executions>
+    </plugin>
+    </plugins>
+    </build>
+
+</project>
